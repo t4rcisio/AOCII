@@ -1,0 +1,13 @@
+
+
+
+
+module ram(clock);
+
+
+
+
+memory chanel( )
+
+
+endmodule
