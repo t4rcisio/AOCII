@@ -1,0 +1,35 @@
+
+
+
+
+
+module cache(index, tag, data, mode);
+
+
+input [2:0] index; // Acesso à posição da cache
+input [7:0] tag;   // TAG da instrução
+input [7:0] data;  // Dado a ser gravado
+input mode 		    // Leitura ou escrita
+
+
+reg [19:0] cache [7:0];
+
+
+//	  Valid	Dirt	  LRU	   TAG	 Data
+// 	 1 	  1      1		 8		  8
+//	  [19]   [18]   [16]  [15:8]  [7:0]
+
+
+always @(negedge clock) begin
+
+		if mode begin
+		
+		
+		else 
+		if not mode begin
+		
+		
+		
+		end
+
+end
