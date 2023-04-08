@@ -1,0 +1,94 @@
+			// CANAL 1
+			// GRAVACAO VAZIA -> Caso a posicao não seja válida ou não esteja suja ou LRU
+//			if (!memCache[index][valid]) begin
+//					
+//					memCache[index][valid] = 1; 		// Marca a validade
+//					memCache[index][dirt] = 1;			// Marca que está sujo
+//					
+//					memCache[index][lru] = 1;			// Altera o LRU
+//					memCache[index_plus][lru] = 0;	// LRU da segunda via
+//					
+//					memCache[index][15:8] = tag;		// Atualiza a TAG
+//					memCache[index][7:0] = data;		// Atualiza o dado
+//					
+//					w_back = 0;
+//			end
+//			// CANAL 1
+//			// GRAVACAO SUJA -> Valid e Dirt - writeBack
+//			else if (!(memCache[index][15:8]==tag) && !memCache[index][dirt] && !memCache[index][lru]) begin
+//					
+//					RAM[memCache[index][15:8]] = memCache[index][7:0]; // Leva o bloco da cache para a RAM
+//					
+//					memCache[index][dirt] = 1;			// Confirme que está sujo
+//					memCache[index][valid] = 1;		// Confirma dado válido
+//					
+//					memCache[index][lru] = 1;			// Altera o LRU
+//					memCache[index_plus][lru] = 0;	// LRU da segunda via
+//					
+//					memCache[index][15:8] = tag;		// Salva a TAG
+//					memCache[index][7:0] = data;		// Atualiza o dado
+//				
+//					w_back = 1;
+//			end
+//			// CANAL 1
+//			// GRAVACAO LIMPA -> Contém um dado válido que veio da RAM mas já não é LRU
+//			else if (memCache[index][15:8]==tag && !memCache[index][dirt] && !memCache[index][lru]) begin
+//					
+//					memCache[index][dirt] = 1;			// Confirme que está sujo
+//					memCache[index][valid] = 1;		// Confirma dado válido
+//					
+//					memCache[index][lru] = 1;			// Altera o LRU
+//					memCache[index_plus][lru] = 0;	// LRU da segunda via
+//					
+//					memCache[index][15:8] = tag;		// Salva a TAG
+//					memCache[index][7:0] = data;		// Atualiza o dado
+//				
+//					w_back = 1;
+//			end
+//			// GRAVACAO LIMPA COM LRU PARA ATUALIZAR O DADO
+//			else if (memCache[index][15:8]==tag && !memCache[index][dirt] && memCache[index][lru]) begin
+//					
+//					memCache[index][dirt] = 1;			// Confirme que está sujo
+//					memCache[index][valid] = 1;		// Confirma dado válido
+//					
+//					memCache[index][lru] = 1;			// Altera o LRU
+//					memCache[index_plus][lru] = 0;	// LRU da segunda via
+//					
+//					memCache[index][15:8] = tag;		// Salva a TAG
+//					memCache[index][7:0] = data;		// Atualiza o dado
+//				
+//					w_back = 1;
+//			end
+//			// GRAVACAO LIMPA COM MISS
+//			else if (!(memCache[index][15:8]==tag) && !memCache[index][dirt] && !memCache[index][lru]) begin
+//					
+//					memCache[index][dirt] = 1;			// Confirme que está sujo
+//					memCache[index][valid] = 1;		// Confirma dado válido
+//					
+//					memCache[index][lru] = 1;			// Altera o LRU
+//					memCache[index_plus][lru] = 0;	// LRU da segunda via
+//					
+//					memCache[index][15:8] = tag;		// Salva a TAG
+//					memCache[index][7:0] = data;		// Atualiza o dado
+//				
+//					w_back = 0;
+//			end
+//			
+//			else if (!(memCache[index][15:8]==tag) && memCache[index][dirt] && !memCache[index][lru]) begin
+//					
+//					RAM[memCache[index][15:8]] = memCache[index][7:0];
+//					
+//					memCache[index][dirt] = 1;			// Confirme que está sujo
+//					memCache[index][valid] = 1;		// Confirma dado válido
+//					
+//					memCache[index][lru] = 1;			// Altera o LRU
+//					memCache[index_plus][lru] = 0;	// LRU da segunda via
+//					
+//					memCache[index][15:8] = tag;		// Salva a TAG
+//					memCache[index][7:0] = data;		// Atualiza o dado
+//				
+//					w_back = 0;
+//			end
+//			
+//			
+//		end

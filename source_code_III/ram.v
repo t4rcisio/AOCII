@@ -14,24 +14,42 @@ wire [7:0] cacheData;
 
 initial begin
 					   //  MODE INDEX      TAG         DATA
-		instruction = {1'b1, 2'b11, 8'b00000000,8'b00000001}; // Escreve no canal 1
-		#50;
+		instruction = {1'b1, 2'b11, 8'b00000000,8'b00000001}; // Escreve no canal 1 -> Miss 
+		#100;
 		
 					   //  MODE INDEX      TAG         DATA
-		instruction = {1'b1, 2'b11, 8'b00000000,8'b11111111}; // Provoca um write back
-		#150;
+		instruction = {1'b1, 2'b11, 8'b00000000,8'b11111111}; // Escreve no canal 1 - Hit + write back
+		#100;
 		
 					   //  MODE INDEX      TAG         DATA
-		instruction = {1'b1, 2'b11, 8'b00000001,8'b00001010}; // Escreve  no cabal 2 
-		#250;
+		instruction = {1'b0, 2'b11, 8'b00000000,8'b00001010}; // Lê no canal 1 - Hit
+		#100;
 		
 					   //  MODE INDEX      TAG         DATA
-		instruction = {1'b1, 2'b11, 8'b00000001,8'b10000001}; // Provoca um write back
-		#350;
+		instruction = {1'b1, 2'b00, 8'b00000111,8'b10000001}; // Escreve no canal 1 - Miss
+		#100;
 		
 					   //  MODE INDEX      TAG         DATA
-		instruction = {1'b1, 2'b00, 8'b0000010,8'b00001111}; // escreve no canal 1
-		#450;
+		instruction = {1'b0, 2'b00, 8'b00000111,8'b00001111}; // Lê no canal 1 - Hit
+		#100;
+		
+						//  MODE INDEX      TAG         DATA
+		instruction = {1'b0, 2'b10, 8'b00000111,8'b00001111}; // Lê no canal 1 - Miss + write back
+		#100;
+		
+						//  MODE INDEX      TAG         DATA
+		instruction = {1'b1, 2'b11, 8'b00000111,8'b00001010}; // Escreve no canal 2 -> - Miss
+		#100;
+		
+//		CANAL 2
+
+						//  MODE INDEX      TAG         DATA
+		instruction = {1'b1, 2'b11, 8'b00000111,8'b00001010}; // Escreve no canal 2 -> - Hit + write back
+		#100;
+		
+						//  MODE INDEX      TAG         DATA
+		instruction = {1'b0, 2'b11, 8'b00000111,8'b00001010}; // Lê no canal 1 - Hit
+		#100;
 		
 
 end

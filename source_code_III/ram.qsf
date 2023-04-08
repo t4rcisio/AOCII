@@ -58,4 +58,5 @@ set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name MIF_FILE ram.mif
 set_global_assignment -name MIF_FILE ram_preset.mif
 set_global_assignment -name VERILOG_FILE cache.v
+set_global_assignment -name TEXT_FILE old.txt
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
