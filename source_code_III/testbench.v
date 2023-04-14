@@ -1,13 +1,21 @@
 
 `timescale 1ps / 1ps
-module testbench  ; 
+module \testbench.v   ; 
  
+  wire    channel_out   ; 
+  wire    hit_out   ; 
   reg    clock   ; 
-  wire  [7:0]  ram_out   ; 
+  wire  [7:0]  data_out   ; 
+  wire    load_out   ; 
+  wire    wBack_out   ; 
   ram  
    DUT  ( 
-       .clock (clock ) ,
-      .ram_out (ram_out ) ); 
+       .channel_out (channel_out ) ,
+      .hit_out (hit_out ) ,
+      .clock (clock ) ,
+      .data_out (data_out ) ,
+      .load_out (load_out ) ,
+      .wBack_out (wBack_out ) ); 
 
 
 
