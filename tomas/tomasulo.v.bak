@@ -1,0 +1,14 @@
+
+
+
+module tomasulo(clock);
+
+input clock;
+
+
+
+
+
+
+
+endmodule

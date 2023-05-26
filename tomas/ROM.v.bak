@@ -1,0 +1,25 @@
+
+
+
+module ROM(clock, read, address, instruction);
+
+input clock;
+input read;
+input [6:0] address;
+output reg [17instruction;
+
+
+reg [16:0] memory [0:128];
+
+
+
+always @(posedge clock) begin
+		
+		if(read) begin
+		
+		end
+			
+end
+
+
+endmodule

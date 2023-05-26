@@ -1,0 +1,15 @@
+
+
+
+module register_db(clock, read, store, reg_a, reg_b, data_in, out_a, out_b);
+
+input clock;
+input read;
+input store;
+
+
+
+
+
+
+endmodule

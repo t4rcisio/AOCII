@@ -1,0 +1,43 @@
+
+
+
+
+
+
+
+module memory(clock, key_mem, read, store, address, data_in, data_out);
+
+input clock;
+input read;
+input store;
+input key_mem;
+input [15:00] address;
+input [15:00] data_in;
+
+output reg [15:00] data_out;
+
+
+reg [15:00] memory_data [0:1024];
+
+
+always @(posedge clock) begin
+
+	if(key_mem) begin
+		
+		if(store) begin
+			memory_data[address] = data_in;
+		end
+		
+		if(read) begin
+			data_out = memory_data[address];
+		end
+		
+	end
+
+
+end
+
+
+
+
+endmodule

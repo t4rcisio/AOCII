@@ -1,0 +1,33 @@
+
+
+
+
+module heap(clock, data_in, address, data_out);
+
+
+input clock;
+input [16:0] data_in;
+
+
+/// Modelo
+// [ 5  ] [ 4  ] [  5  ] [  5  ] [  5  ] [  1  ] [  1  ]  = 26 bits
+// [ id ] [ op ] [ref_A] [ref_B] [ref_C] [ready] [ done]
+
+reg [26:0] mem_heap [127:0];
+
+initial begin
+	
+	for (i = 0; i<128; i = i + 1) begin
+		mem_heap[i] = 0;
+	end
+
+end 
+
+always @(posedge clock) begin
+
+
+
+
+
+
+end
